@@ -1,0 +1,19 @@
+{
+  "nodes": [
+   	{"id": "WWS", "group": 1, "type" : "system", "color": "coral"},
+	{"id": "LVS", "group": 1, "type" : "system", "color": "coral"},
+	{"id": "S4@B2C", "group": 2, "type" : "system", "color": "greenyellow"},
+	  
+	{"id": "SST-XY", "group": 2, "type" : "system", "color": "greenyellow"},
+	{"id": "SST-113", "group": 2, "type" : "system", "color": "greenyellow"},
+	{"id": "SST-87", "group": 2, "type" : "system", "color": "greenyellow"}
+  ],
+  "links": [
+    {"source": "WWS", "target": "SST-XY", "curvature": 0.4, "rotation": 0, "linkType": "Webmethods"},
+	{"source": "WWS", "target": "SST-113", "curvature": 0.4, "rotation": 3.141592653589793, "linkType": "FTP"},
+	{"source": "SST-XY", "target": "S4@B2C", "linkType": "Smartgate"},
+	{"source": "SST-113", "target": "S4@B2C", "linkType": "Smartgate"},
+	{"source": "LVS", "target": "SST-87", "linkType": "Database connection"},
+	{"source": "SST-87", "target": "WWS", "linkType": "Database connection"}
+  ]
+}
